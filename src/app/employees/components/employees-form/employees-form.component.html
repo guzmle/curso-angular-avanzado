@@ -1,0 +1,17 @@
+<div class="modal-header">
+  <h4 class="modal-title">Empleados</h4>
+  <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="col-12">
+    <app-input-text [control]="form.get('name')" [name]="'name'" [label]="'Nombre'"></app-input-text>
+  </div>
+  <div class="col-12">
+    <app-input-text [control]="form.get('surname')" [name]="'surname'" [label]="'Apellido'"></app-input-text>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="submit()">Guardar</button>
+</div>

@@ -1,12 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
-import { HeaderBarComponent } from './components/header-bar/header-bar.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {HeaderBarComponent} from './components/header-bar/header-bar.component';
+import { InputTextComponent } from './controls/components/input-text/input-text.component';
 
 @NgModule({
-  declarations: [NavigationBarComponent, HeaderBarComponent],
+  declarations: [HeaderBarComponent],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+  ],
+  exports: [HeaderBarComponent],
 })
-export class CoreModule { }
+export class CoreModule {
+}

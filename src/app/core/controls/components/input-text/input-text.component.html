@@ -1,0 +1,9 @@
+<div class="form-group">
+  <label [attr.for]="name"> <span class="text-danger" *ngIf="validators?.required">*</span>{{label}}</label>
+  <input [type]="type"
+         [formControl]="control"
+         [ngClass]="{'is-invalid': control.invalid && control.dirty}"
+         class="form-control"
+         [attr.id]="name"
+         [attr.placeholder]="placeholder">
+</div>

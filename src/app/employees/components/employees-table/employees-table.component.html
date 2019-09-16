@@ -1,0 +1,30 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Codigo</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody *ngIf="model?.list?.length">
+  <tr *ngFor="let employee of model.list">
+    <td>{{employee.name}}</td>
+    <td>{{employee.surname}}</td>
+    <td>{{employee.code}}</td>
+    <td class="text-right">
+      <button class="btn btn-primary mr-2" (click)="update.emit(employee)">
+        Editar
+      </button>
+      <button class="btn btn-danger" (click)="delete.emit(employee)">
+        Eliminar
+      </button>
+    </td>
+  </tr>
+  </tbody>
+  <tbody>
+  <tr *ngIf="!model?.list?.length">
+    <td colspan="4">No Hay data</td>
+  </tr>
+  </tbody>
+</table>

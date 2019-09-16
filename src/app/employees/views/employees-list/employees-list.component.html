@@ -1,0 +1,18 @@
+<div class="row mt-2">
+  <div class="col-10">
+    <h2>Empleados</h2>
+  </div>
+  <div class="col-2 text-right">
+    <button class="btn btn-success" (click)="openAddEmployee()">
+      Agregar
+    </button>
+  </div>
+</div>
+<div class="row mt-2">
+  <div class="col-12">
+    <app-employees-table [model]="model"
+                         (update)="openUpdateEmployee($event)"
+                          (delete)="deleteEmployee($event)">
+    </app-employees-table>
+  </div>
+</div>
