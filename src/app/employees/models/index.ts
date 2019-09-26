@@ -4,3 +4,8 @@ export interface Employee {
   surname: string;
   code?: number;
 }
+
+export interface Course {
+  id?: number;
+  name: string;
+}

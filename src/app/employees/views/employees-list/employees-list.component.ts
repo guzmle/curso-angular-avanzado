@@ -14,7 +14,7 @@ export class EmployeesListComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
   constructor(private readonly service: EmployeesListService) {
-    this.service.modelChanges.subscribe((model) => this.model = model);
+    this.subscription =this.service.modelChanges.subscribe((model) => this.model = model);
   }
 
   ngOnInit() {
