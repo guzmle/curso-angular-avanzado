@@ -1,8 +1,8 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {EmployeesListService} from './employees-list.service';
-import {ResultList} from '../../../core/intefaces/result-list';
-import {Employee} from '../../models';
-import {Subscription} from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { EmployeesListService } from './employees-list.service';
+import { ResultList } from '../../../core/intefaces/result-list';
+import { Employee } from '../../models';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-employees-list',
@@ -12,9 +12,10 @@ import {Subscription} from 'rxjs';
 export class EmployeesListComponent implements OnInit, OnDestroy {
   model: ResultList<Employee>;
   subscription: Subscription;
+  text: string;
 
   constructor(private readonly service: EmployeesListService) {
-    this.subscription =this.service.modelChanges.subscribe((model) => this.model = model);
+    this.subscription = this.service.modelChanges.subscribe((model) => this.model = model);
   }
 
   ngOnInit() {

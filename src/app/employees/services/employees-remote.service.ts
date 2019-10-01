@@ -13,7 +13,7 @@ export class EmployeesRemoteService extends RemoteService {
 
   getList(): ResultList<Employee> {
     if (!this.employeeList.length) {
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 40; i++) {
         this.employeeList.push({id: i, name: `Nombre ${i}`, surname: `Apellido ${i}`, code: AppUtils.generateNum()});
       }
     }

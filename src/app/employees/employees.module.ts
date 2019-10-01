@@ -7,6 +7,8 @@ import { ControlsModule } from '../core/controls/controls.module';
 import { CoursesListComponent } from './views/courses-list/courses-list.component';
 import { CoursesFormComponent } from './components/courses-form/courses-form.component';
 import { AppCommonModule } from "../common/app-common.module";
+import { FormsModule } from "@angular/forms";
+import { FibonacciPipe } from './pipes/fibonacci.pipe';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,15 @@ import { AppCommonModule } from "../common/app-common.module";
     EmployeesTableComponent,
     EmployeesFormComponent,
     CoursesListComponent,
-    CoursesFormComponent
+    CoursesFormComponent,
+    FibonacciPipe
   ],
   entryComponents: [EmployeesFormComponent],
   imports: [
     CommonModule,
     ControlsModule,
     AppCommonModule,
+    FormsModule,
   ]
 })
 export class EmployeesModule {

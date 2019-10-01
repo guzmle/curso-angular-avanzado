@@ -4,6 +4,7 @@
     <th>Nombre</th>
     <th>Apellido</th>
     <th>Codigo</th>
+    <th>Fibonacci</th>
     <th></th>
   </tr>
   </thead>
@@ -12,8 +13,10 @@
     <td>{{employee.name}}</td>
     <td>{{employee.surname}}</td>
     <td>{{employee.code}}</td>
+    <td>{{employee | fibonacci}}</td>
+
     <td class="text-right">
-      <button class="btn btn-primary mr-2" (click)="update.emit(employee)">
+      <button class="btn btn-primary mr-2" (click)="updateFire(employee)">
         Editar
       </button>
       <button class="btn btn-danger" (click)="delete.emit(employee)">
