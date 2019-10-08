@@ -19,7 +19,7 @@ import { FibonacciPipe } from './pipes/fibonacci.pipe';
     CoursesFormComponent,
     FibonacciPipe
   ],
-  entryComponents: [EmployeesFormComponent],
+  entryComponents: [EmployeesFormComponent, EmployeesTableComponent],
   imports: [
     CommonModule,
     ControlsModule,

@@ -15,7 +15,10 @@
   <div class="col-12">
     <app-employees-table [model]="model"
                          (update)="openUpdateEmployee($event)"
-                          (delete)="deleteEmployee($event)">
+                         (delete)="deleteEmployee($event)">
     </app-employees-table>
+  </div>
+  <div class="col-12" #element>
+
   </div>
 </div>

@@ -33,4 +33,9 @@ export class EmployeesTableComponent extends ListComponent<ResultList<Employee>>
     this.changeRef.detectChanges();
     this.changeRef.markForCheck();
   }
+
+  public printConsole(text) {
+    console.log(text);
+  }
+
 }
