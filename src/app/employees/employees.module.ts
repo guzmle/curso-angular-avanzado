@@ -9,6 +9,8 @@ import { CoursesFormComponent } from './components/courses-form/courses-form.com
 import { AppCommonModule } from "../common/app-common.module";
 import { FormsModule } from "@angular/forms";
 import { FibonacciPipe } from './pipes/fibonacci.pipe';
+import { ContainerDirective } from './directives/container.directive';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { FibonacciPipe } from './pipes/fibonacci.pipe';
     EmployeesFormComponent,
     CoursesListComponent,
     CoursesFormComponent,
-    FibonacciPipe
+    FibonacciPipe,
+    ContainerDirective,
   ],
   entryComponents: [EmployeesFormComponent, EmployeesTableComponent],
   imports: [

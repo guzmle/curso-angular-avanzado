@@ -4,6 +4,7 @@ import { ResultList } from '../../../core/intefaces/result-list';
 import { Employee } from '../../models';
 import { Subscription } from 'rxjs';
 import { EmployeesTableComponent } from "../../components/employees-table/employees-table.component";
+import { ContainerDirective } from "../../directives/container.directive";
 
 @Component({
   selector: 'app-employees-list',
@@ -18,7 +19,7 @@ export class EmployeesListComponent implements OnInit, OnDestroy {
   @ViewChild(EmployeesTableComponent, {static: true})
   tableComponent: EmployeesTableComponent;
 
-  @ViewChild('element', {static: true}) elementDiv;
+  @ViewChild(ContainerDirective, {static: true}) elementDiv: ContainerDirective;
 
   constructor(private readonly service: EmployeesListService, private factory: ComponentFactoryResolver) {
     this.subscription = this.service.modelChanges.subscribe((model) => this.model = model);
@@ -26,13 +27,12 @@ export class EmployeesListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.service.getData();
-    console.log(this.elementDiv);
-    this.elementDiv.nativeElement.innerHTML = '<h1>Esto es de leo</h1>';
-    this.tableComponent.printConsole('leo');
     this.tableComponent.update.subscribe((value) => console.log(value));
 
-    const component = this.factory.resolveComponentFactory(EmployeesTableComponent);
+    const componentRef = this.factory.resolveComponentFactory(EmployeesTableComponent);
+    const component = this.elementDiv.containerRef.createComponent(componentRef);
     console.log(component);
+    component.instance.model = this.model;
 
   }
 

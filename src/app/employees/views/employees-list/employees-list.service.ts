@@ -14,7 +14,8 @@ export class EmployeesListService {
 
   private model = new Subject<ResultList<Employee>>();
 
-  constructor(private readonly remoteService: EmployeesRemoteService, private modalService: NgbModal) {
+  constructor(private readonly remoteService: EmployeesRemoteService,
+              private modalService: NgbModal) {
   }
 
   public get modelChanges() {
